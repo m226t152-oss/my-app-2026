@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語学習アプリ - English Learning App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>英語学習アプリ</h1>
+        </header>
+
+        <nav>
+            <button onclick="showSection('add-word')">単語登録</button>
+            <button onclick="showSection('word-list')">単語一覧</button>
+            <button onclick="showSection('quiz')">クイズ</button>
+            <button onclick="showSection('logs')">学習ログ</button>
+        </nav>
+
+        <main>
+            <!-- 単語登録セクション -->
+            <section id="add-word" class="active">
+                <h2>新しい単語を登録</h2>
+                <div class="form-group">
+                    <input type="text" id="word-input" placeholder="英単語 (例: Apple)">
+                    <input type="text" id="meaning-input" placeholder="日本語訳 (例: りんご)">
+                    <button id="save-word-btn">保存する</button>
+                </div>
+            </section>
+
+            <!-- 単語一覧セクション -->
+            <section id="word-list">
+                <h2>登録した単語一覧</h2>
+                <ul id="vocabulary-list">
+                    <!-- JavaScriptで動的に生成 -->
+                </ul>
+                <button id="clear-all-btn" class="danger">すべてのデータを消去</button>
+            </section>
+
+            <!-- クイズセクション -->
+            <section id="quiz">
+                <h2>クイズ</h2>
+                <div id="quiz-container">
+                    <p id="quiz-instruction">「開始」ボタンを押してクイズを始めてください。</p>
+                    <div id="quiz-card" class="hidden">
+                        <div id="quiz-question"></div>
+                        <div id="quiz-answer" class="hidden"></div>
+                        <div class="quiz-controls">
+                            <button id="reveal-btn">答えを見る</button>
+                            <button id="next-btn" class="hidden">次の問題</button>
+                        </div>
+                    </div>
+                    <button id="start-quiz-btn">クイズを開始</button>
+                </div>
+            </section>
+
+            <!-- ログセクション -->
+            <section id="logs">
+                <h2>学習ログ</h2>
+                <ul id="log-list">
+                    <!-- JavaScriptで動的に生成 -->
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
